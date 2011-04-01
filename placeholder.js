@@ -10,6 +10,7 @@ function inputPlaceholder (input, color) {
 
 	// Do nothing if placeholder supported by the browser (Webkit, Firefox 3.7)
 	if (input.placeholder && 'placeholder' in document.createElement(input.tagName)) return input;
+	if (input.attributes['data-placeholder-visible']) return input;
 
 	color = color || '#AAA';
 	var default_color = input.style.color;
@@ -19,6 +20,9 @@ function inputPlaceholder (input, color) {
 		input.value = placeholder;
 		input.style.color = color;
 		input.setAttribute('data-placeholder-visible', 'true');
+	}
+	else {
+	 input.setAttribute('data-placeholder-visible', '');
 	}
 
 	var add_event = /*@cc_on'attachEvent'||@*/'addEventListener';

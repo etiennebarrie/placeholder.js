@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Called twice on same element</title>
+</head>
+<body>
+	<form>
+		<input placeholder="should be grey" value="remove this text and blur to see placeholder" id="fuu" size="50" style="color: red"/>
+	</form>
+	<script src="placeholder.js"></script>
+	<script type="text/javascript">
+	window.onload = function(){
+		var input = document.getElementById('fuu')
+		inputPlaceholder(input)
+		inputPlaceholder(input)
+	}
+	</script>
+</body>
+</html>
