@@ -15,7 +15,7 @@ function inputPlaceholder (input, color) {
 	var default_color = input.style.color;
 	var placeholder = input.getAttribute('placeholder');
 
-	if (input.value === '' || input.value == placeholder) {
+	if (input.value === '') {
 		input.value = placeholder;
 		input.style.color = color;
 		input.setAttribute('data-placeholder-visible', 'true');
